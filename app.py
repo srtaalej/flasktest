@@ -128,11 +128,9 @@ def pick():
                 spotify_urls.append(spotify_url)
                 
         for url in spotify_urls:
-            existing_track = TrackRecommendations.query.filter_by(url=url).first()
-            if not existing_track:
-                new_track = TrackRecommendations(url=url)
-                db.session.add(new_track)
-                db.session.commit()
+            new_track = TrackRecommendations(url=url)
+            db.session.add(new_track)
+            db.session.commit()
         print(spotify_urls)
         
     if not rec_urls:
