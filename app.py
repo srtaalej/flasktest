@@ -72,17 +72,7 @@ def signin():
 @app.route("/pick", methods=["GET", "POST"])
 def pick():
     if request.method == "POST":
-        url = "https://accounts.spotify.com/api/token"
-        headers = {
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-        data = {
-            "grant_type": "client_credentials",
-            "client_id": "6c169079efe6468daf0c6d2eadc5c063",
-            "client_secret": "b7db0e7aaa6c4143ba35d4b75b886a14"
-        }
-        response = requests.post(url, headers=headers, data=data)
-        print(response.json())
+        pass
     return render_template("pick.html")
 
 @app.route("/logout")
